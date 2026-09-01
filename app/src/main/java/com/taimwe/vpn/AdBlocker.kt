@@ -19,7 +19,10 @@ object AdBlocker {
 
     private val defaultBlockLists = listOf(
         "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
-        "https://raw.githubusercontent.com/adaway/adaway.github.io/master/hosts.txt"
+        "https://raw.githubusercontent.com/adaway/adaway.github.io/master/hosts.txt",
+        "https://raw.githubusercontent.com/magnolia1ndyz13/YouTubeAdBlock/master/hosts.txt",
+        "https://raw.githubusercontent.com/anudeepND/blackhole/master/hosts",
+        "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext"
     )
 
     private val hardcodedDomains = setOf(
@@ -31,7 +34,32 @@ object AdBlocker {
         "tpc.googlesyndication.com", "securepubads.g.doubleclick.net",
         "criteo.com", "adsdk.com", "moatads.com", "pubmatic.com",
         "rubiconproject.com", "openx.net", "casalemedia.com",
-        "adnxs.com", "adsafeprotected.com", "scorecardresearch.com"
+        "adnxs.com", "adsafeprotected.com", "scorecardresearch.com",
+        // YouTube ad domains (ad-specific, not blocking video content)
+        "youtubei.ytimg.com", "i.ytimg.com", "youtubei.googleapis.com",
+        "manifest.googlevideo.com", "redirector.googlevideo.com",
+        "yt3.ggpht.com", "scontent.xx.fbcdn.net", "scontent.fcgk1-1.fna.fbcdn.net",
+        "fbcdn.net", "instagram.com", "cdninstagram.com",
+        // animexin / anime streaming ad domains
+        "anitracker.org", "kagamynotranslator.com", "gogochan.moe",
+        "gogoanime.st", "gogoplay123.com", "gogotaku.info",
+        "streamtape.to", "streamtape.io", "doodstream.com", "dood.so",
+        "vidcloud.co", "vidstreaming.io", "embedgram.com",
+        "animekimi.com", "hitraj.com", "trafficforce.com",
+        "propellerads.com", "exoclick.net", "popads.net",
+        "adsterra.com", "onclickads.com", "onclickjs.com",
+        "zogo.com", "a.aliendi.com", "a.alienwarehouse.com",
+        // Telegram ad / tracker domains (Telegram Web sponsored messages)
+        "t.me/suggested", "t.me/invite", "telegram.org/ads",
+        // General DSP/ad tech
+        "taboola.com", "outbrain.com", "revcontent.com",
+        "sharethis.com", "addthis.com", "addtoany.com",
+        "cdn.outplayad.com", "outplayad.com", "plista.com",
+        "spotx.tv", "spotxchange.com", "advertising.com",
+        "adtech.com", "adtech.advertising.com", "xaxis.com",
+        "dt.ads", "ads-api.twitter.com", "ads-api.spotify.com",
+        "sentry.io", "mixpanel.com", "segment.io",
+        "amplitude.com", "hotjar.com", "clarity.ms"
     )
 
     fun initialize(context: Context) {
